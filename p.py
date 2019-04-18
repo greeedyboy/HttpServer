@@ -6,11 +6,18 @@
 
 import os,time,random
 from time import sleep
+from boto.s3.connection import S3Connection
 
 def gitpush(fn,commit='by q',delfn=True):
     os.system('git add '+fn)
     os.system('git commit -m "'+ commit +'"')
-    os.system('git push origin master')
+    #from boto.s3.connection import S3Connection
+    #s3 = S3Connection(os.environ['S3_KEY'], os.environ['S3_SECRET'])
+    #git push --force --quiet "https://greedyboy:${CO_TOKEN}@${CO_REF}" master:master
+    token=S3Connection(os.environ['token'])
+    comdstr='git push --force --quiet "https://greedyboy:'+ token +'@github.com/greedyboy/HttpServer.git"'
+    #os.system('git push origin master')
+    
     if delfn:
         os.remove(fn)
 
