@@ -15,7 +15,7 @@ def gitpush(fn,commit='by q',delfn=True):
     #s3 = S3Connection(os.environ['S3_KEY'], os.environ['S3_SECRET'])
     #git push --force --quiet "https://greedyboy:${CO_TOKEN}@${CO_REF}" master:master
     #token=S3Connection(os.environ['token'])
-    token='d451ebb9c8690cb9832e53df33536e29de8e64fd'
+    token='937285aa64c3043d9281d9f2a5c9eee255fdc835'
     comdstr='git push --force --quiet "https://greedyboy:'+ token +'@github.com/greedyboy/HttpServer.git"'
     #os.system('git push origin master')
     
