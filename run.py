@@ -2,7 +2,7 @@
 
 # @Date    : 2018-10-26
 # @Author  : Peng Shiyu
-
+from p import runx
 from flask import (
     Flask,
     render_template,
@@ -15,6 +15,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
+    runx()
     return render_template("index.html")
 
 
