@@ -36,4 +36,4 @@ def runx():
   for strx in strlist:
       fn=creat_file(strx=strx)
       print('pushing ' + fn)
-      #gitpush(fn=fn,commit=strx)
+      gitpush(fn=fn,commit=strx)
