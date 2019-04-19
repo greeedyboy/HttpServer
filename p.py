@@ -30,16 +30,23 @@ def gitpush(fn,commit='by q',delfn=True):
     # os.system('cd .deploy_git')
     # os.system('rm -rf .git')
     # os.system('cd ../')
+    # print('entre the cfn')
+    # os.system('cd cfn')
+
+
+    print('clone git')
+    os.system('git clone https://'+ coref +' cfn')
+
     print('entre the cfn')
-    os.system('cd cfn')
+    os.system('cd cfn/')
+
     print('git config user name')
     os.system('git config user.email "greedyboy@163.com"')
     os.system('git config user.name "greedyboy"')
-    
+
     print('回到主目录')
     os.system('cd ../')
-    print('clone git')
-    os.system('git clone https://'+ coref +' cfn')
+
 
     print('checkout master')
 
