@@ -10,6 +10,8 @@ from boto.s3.connection import S3Connection
 
 def gitpush(fn,commit='by q',delfn=True):
     os.system('git init')
+    os.system('git config --global user.email "greedyboy@163.com"')
+    os.system('git config --global user.name "greedyboy"')
     os.system('git add '+fn)
     os.system('git commit -m "'+ commit +'"')
     #from boto.s3.connection import S3Connection
