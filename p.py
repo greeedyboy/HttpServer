@@ -9,6 +9,7 @@ from time import sleep
 from boto.s3.connection import S3Connection
 
 def gitpush(fn,commit='by q',delfn=True):
+    os.system('git init')
     os.system('git add '+fn)
     os.system('git commit -m "'+ commit +'"')
     #from boto.s3.connection import S3Connection
