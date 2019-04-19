@@ -37,6 +37,8 @@ def gitpush(fn,commit='by q',delfn=True):
     print('clone git')
     os.system('git clone https://'+ coref +' cfn')
 
+    sleep(60)
+
     print('entre the cfn')
     os.system('cd cfn/')
 
