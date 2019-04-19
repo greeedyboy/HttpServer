@@ -8,22 +8,52 @@ import os,time,random
 from time import sleep
 from boto.s3.connection import S3Connection
 
+"""
+- git clone https://${CO_REF} .deploy_git  # GH_REF是最下面配置的仓库地址
+- cd .deploy_git
+- git checkout master
+- cd ../
+- mv .deploy_git/.git/ ./public/   # 这一步之前的操作是为了保留master分支的提交记录，不然每次git init的话只有1条commit
+- cd ./public
+- git config user.name "greedyboy"  #修改name
+- git config user.email "greedyboy@163.com"  #修改email
+- git add .
+- git commit -m "Travis CI Auto Builder at `date +"%Y-%m-%d %H:%M"`"  # 提交记录包含时间 跟上面更改时区配合
+- git push --force --quiet "https://greedyboy:${CO_TOKEN}@${CO_REF}" master:master  #GH_TOKEN是在Travis中配置token的名称
+:param fn: 
+:param commit: 
+:param delfn: 
+:return: 
+"""
 def gitpush(fn,commit='by q',delfn=True):
-    os.system('git init')
-    os.system('git config --global user.email "greedyboy@163.com"')
-    os.system('git config --global user.name "greedyboy"')
+    coref='github.com/greedyboy/HttpServer.git'
+    os.system('git clone https://'+ coref +' .deploy_git')
+    os.system('cd .deploy_git')
+    os.system('git checkout master')
+    os.system('cd ../')
+    # os.system('mv .deploy_git/.git/ ./public/')
+    # os.system('cd ./public')
+    os.system('git config user.email "greedyboy@163.com"')
+    os.system('git config user.name "greedyboy"')
     os.system('git add '+fn)
     os.system('git commit -m "'+ commit +'"')
+
+
+    # os.system('git init')
+    # os.system('git config --global user.email "greedyboy@163.com"')
+    # os.system('git config --global user.name "greedyboy"')
+    # os.system('git add '+fn)
+    # os.system('git commit -m "'+ commit +'"')
     #from boto.s3.connection import S3Connection
     #s3 = S3Connection(os.environ['S3_KEY'], os.environ['S3_SECRET'])
     #git push --force --quiet "https://greedyboy:${CO_TOKEN}@${CO_REF}" master:master
     #token=S3Connection(os.environ['token'])
     token='937285aa64c3043d9281d9f2a5c9eee255fdc835'
-    #comdstr='git push --force --quiet "https://greedyboy:'+ token +'@github.com/greedyboy/HttpServer.git"'
-    comdstr='git push --set-upstream https://greedyboy:'+ token +'@github.com/greedyboy/HttpServer.git master'
+    comdstr='git push --force --quiet "https://greedyboy:'+ token +'@github.com/greedyboy/HttpServer.git" master:master'
+    #comdstr='git push --set-upstream https://greedyboy:'+ token +'@github.com/greedyboy/HttpServer.git master'
     
     os.system(comdstr)
-    os.system('cat ~/.ssh/id_rsa.pub')
+
     
     if delfn:
         os.remove(fn)
