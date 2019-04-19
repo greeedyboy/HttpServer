@@ -34,10 +34,11 @@ def gitpush(fn,commit='by q',delfn=True):
     # os.system('cd cfn')
 
 
+
     print('clone git')
     os.system('git clone https://'+ coref +' cfn')
 
-    sleep(60)
+    sleep(20)
 
     print('entre the cfn')
     os.system('cd cfn/')
