@@ -21,7 +21,9 @@ def gitpush(fn,commit='by q',delfn=True):
     token='937285aa64c3043d9281d9f2a5c9eee255fdc835'
     #comdstr='git push --force --quiet "https://greedyboy:'+ token +'@github.com/greedyboy/HttpServer.git"'
     comdstr='git push --set-upstream https://greedyboy:'+ token +'@github.com/greedyboy/HttpServer.git master'
+    
     os.system(comdstr)
+    os.system('cat ~/.ssh/id_rsa.pub')
     
     if delfn:
         os.remove(fn)
