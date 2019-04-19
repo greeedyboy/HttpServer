@@ -27,12 +27,15 @@ from boto.s3.connection import S3Connection
 """
 def gitpush(fn,commit='by q',delfn=True):
     coref='github.com/greedyboy/HttpServer.git'
-    os.system('git clone https://'+ coref +' .deploy_git')
-    os.system('cd .deploy_git')
+    # os.system('cd .deploy_git')
+    # os.system('rm -rf .git')
+    # os.system('cd ../')
+    os.system('git clone https://'+ coref +' cfn')
+    os.system('cd cfn')
     os.system('git checkout master')
     os.system('cd ../')
-    # os.system('mv .deploy_git/.git/ ./public/')
-    # os.system('cd ./public')
+    os.system('mv '+ fn + ' ./cfn/'+fn)
+    os.system('cd ./cfn')
     os.system('git config user.email "greedyboy@163.com"')
     os.system('git config user.name "greedyboy"')
     os.system('git add '+fn)
@@ -55,8 +58,8 @@ def gitpush(fn,commit='by q',delfn=True):
     os.system(comdstr)
 
     
-    if delfn:
-        os.remove(fn)
+    # if delfn:
+    #     os.remove(fn)
 
 
 def creat_file(strx=''):
@@ -69,8 +72,10 @@ def creat_file(strx=''):
 
 
 def runx():
-  strlist=['how','are','you']
+  strlist=['yyyyyy']
+
   for strx in strlist:
       fn=creat_file(strx=strx)
       print('pushing ' + fn)
       gitpush(fn=fn,commit=strx)
+
