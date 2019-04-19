@@ -30,14 +30,23 @@ def gitpush(fn,commit='by q',delfn=True):
     # os.system('cd .deploy_git')
     # os.system('rm -rf .git')
     # os.system('cd ../')
-    os.system('git clone https://'+ coref +' cfn')
-    os.system('cd cfn')
+
+    print('clone git')
+    os.system('git clone https://'+ coref +' .cfn')
+    print('entre the .cfn')
+    os.system('cd .cfn')
+    print('checkout master')
+
     os.system('git checkout master')
+    print('back fold ../')
     os.system('cd ../')
-    os.system('mv '+ fn + ' ./cfn/'+fn)
-    os.system('cd ./cfn')
+    print('mv')
+    os.system('mv '+ fn + ' .cfn/'+fn)
+    print('cd ./.cfn')
+    os.system('cd ./.cfn')
     os.system('git config user.email "greedyboy@163.com"')
     os.system('git config user.name "greedyboy"')
+    git('git add commit')
     os.system('git add '+fn)
     os.system('git commit -m "'+ commit +'"')
 
@@ -52,6 +61,7 @@ def gitpush(fn,commit='by q',delfn=True):
     #git push --force --quiet "https://greedyboy:${CO_TOKEN}@${CO_REF}" master:master
     #token=S3Connection(os.environ['token'])
     token='937285aa64c3043d9281d9f2a5c9eee255fdc835'
+    print('git push')
     comdstr='git push --force --quiet "https://greedyboy:'+ token +'@github.com/greedyboy/HttpServer.git" master:master'
     #comdstr='git push --set-upstream https://greedyboy:'+ token +'@github.com/greedyboy/HttpServer.git master'
     
