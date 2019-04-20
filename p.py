@@ -36,7 +36,7 @@ def gitpush(fn,commit='by q',delfn=True):
 
 
     print('clone git')
-    os.system('git clone https://'+ coref +' cfn')
+    os.system('git clone https://github.com/greedyboy/HttpServer.git cfn')
 
     sleep(20)
 
@@ -56,8 +56,8 @@ def gitpush(fn,commit='by q',delfn=True):
     os.system('git checkout master')
     print('回到主目录')
     os.system('cd ../')
-    print('移动 主目录blog文件到后面')
-    os.system('mv ./'+ fn + ' ./cfn/'+fn)
+    #print('移动 主目录blog文件到后面')
+    #os.system('mv ./'+ fn + ' ./cfn/'+fn)
 
 
     print('git add commit')
