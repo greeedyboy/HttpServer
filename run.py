@@ -2,7 +2,7 @@
 
 # @Date    : 2018-10-26
 # @Author  : Peng Shiyu
-from p import runx
+from p import runx,creat_file
 from flask import (
     Flask,
     render_template,
@@ -17,6 +17,13 @@ app = Flask(__name__)
 def index():
     runx()
     return render_template("index.html")
+
+@app.route("/blog")
+def blog():
+    fn=creat_file(strx='gs')
+    with open(fn,"r") as f:    #设置文件对象
+        str = f.read()    #可以是随便对文件的操作
+    return str
 
 
 @app.route("/get")
