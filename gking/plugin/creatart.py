@@ -16,11 +16,17 @@ def git_post():
     dbname = settings["MONGODB_DBNAME"]
     shart = settings["MONGODB_SHART"]
     shtoken = settings["MONGODB_SHTOKEN"]
+    name = settings['MONGODB_USER']
+    password = settings['MONGODB_PASSWORD']
 
     # 创建MONGODB数据库链接
-    client = pymongo.MongoClient(host=host,port=port)
+    # 'mongodb://root:123456@localhost:27017/'
+    client = pymongo.MongoClient(host=host, port=port)
     # 指定数据库
     mydb = client[dbname]
+    mydb.authenticate(name=name, password=password)
+
+
     postart = mydb[shart]
 
 
