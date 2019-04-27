@@ -7,3 +7,4 @@ Twisted==18.7.0
 scrapy==1.5.2
 pymongo==3.7.2
 tomd
+requests==2.19.1
