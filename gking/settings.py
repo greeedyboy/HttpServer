@@ -68,16 +68,37 @@ ROBOTSTXT_OBEY = True
 ITEM_PIPELINES = {
    'gking.pipelines.GkingPipeline': 300,
 }
-# MONGODB 主机名
-MONGODB_HOST = "127.0.0.1"
-# MONGODB 端口号
-MONGODB_PORT = 27017
-# 数据库名称
-MONGODB_DBNAME = "gking"
-# 存放数据的表名称
-MONGODB_SHART = "article"
 
-MONGODB_SHTOKEN = "token"
+# Is_dburl=False#是否网络数据库
+Is_dburl=True#是否网络数据库
+
+if Is_dburl:
+   # MONGODB 主机名
+   MONGODB_HOST = "pond123456:pond123456@ds149056.mlab.com"
+   # MONGODB 端口号
+   MONGODB_PORT = 49056
+   # 数据库名称
+   MONGODB_DBNAME = "heroku_wbzxx91z"
+   # 存放数据的表名称
+   MONGODB_SHART = "article"
+   MONGODB_SHTOKEN = "token"
+   ###远程数据配置
+else:
+   # 本地数据库配置
+   # MONGODB 主机名
+   MONGODB_HOST = "127.0.0.1"
+   # MONGODB 端口号
+   MONGODB_PORT = 27017
+   # 数据库名称
+   MONGODB_DBNAME = "gking"
+   # 存放数据的表名称
+   MONGODB_SHART = "article"
+   MONGODB_SHTOKEN = "token"
+   ###远程数据配置
+
+
+
+
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://doc.scrapy.org/en/latest/topics/autothrottle.html
 #AUTOTHROTTLE_ENABLED = True
