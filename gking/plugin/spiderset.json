@@ -1,0 +1,165 @@
+{
+  "urls": {
+    "http://news.nankai.edu.cn/nkyw/index.shtml": "nankai",
+    "http://news.nankai.edu.cn/qqxy/index.shtml": "nankai",
+    "http://news.nankai.edu.cn/zhxw/index.shtml": "nankai",
+    "http://xwzx.cumt.edu.cn/513/list.htm": "cumt"
+  },
+  "methods": {
+    "nankai": {
+      "newslist": {
+        "sel": "css",
+        "selstr": ".news a::attr(href)",
+        "seltype": "extract"
+      },
+      "title": {
+        "sel": "css",
+        "selstr": "title::text",
+        "seltype": "extract_first"
+      },
+      "content": {
+        "sel": "css",
+        "selstr": ".news-content",
+        "seltype": "extract_first"
+      },
+      "imgs": {
+        "sel": "css",
+        "selstr": ".news-content img::attr(src)",
+        "seltype": "extract"
+      },
+      "tags": [
+        "南开",
+        "南开大学",
+        "nankai.info"
+      ],
+      "categories": [
+        "南开大学",
+        "nankai.info"
+      ]
+    },
+    "cumt": {
+      "newslist": {
+        "sel": "css",
+        "selstr": ".wp_article_list a::attr(href)",
+        "seltype": "extract"
+      },
+      "title": {
+        "sel": "css",
+        "selstr": "title::text",
+        "seltype": "extract_first"
+      },
+      "content": {
+        "sel": "css",
+        "selstr": ".wp_articlecontent",
+        "seltype": "extract_first"
+      },
+      "imgs": {
+        "sel": "css",
+        "selstr": ".wp_articlecontent img::attr(src)",
+        "seltype": "extract"
+      },
+      "tags": [
+        "矿大",
+        "中国矿业大学",
+        "cumt",
+        "cumt.com.cn"
+      ],
+      "categories": [
+        "中国矿业大学",
+        "cumt.com.cn"
+      ]
+    }
+  },
+  "gittokens": {
+    "gboy": {
+      "name": "greedyboy",
+      "email": "greedyboy@163.com",
+      "tokens": "c2b9e3f5bf8dc58cc3ab4842b10fe08773e9788f"
+    },
+    "geboy": {
+      "name": "greeedyboy",
+      "email": "greeedyboy@163.com",
+      "tokens": "c544055b75f6fb3b649522c6b987297b89c4f8e0"
+    }
+  },
+  "apis": {
+    "api_nf": {
+      "gittoken": "geboy",
+      "dowhat": "newfile",
+      "typ": "file",
+      "method": "put",
+      "baseurl": "https://api.github.com/repos/greeedyboy/mywebs/contents/source_gking/_posts/",
+      "fromfx": "tempost.md",
+      "tofx": "random.md",
+      "message": "creat new file"
+    },
+    "api_nb": {
+      "gittoken": "geboy",
+      "dowhat": "newfile",
+      "typ": "base64",
+      "method": "put",
+      "fromfx": "base64code",
+      "baseurl": "https://api.github.com/repos/greeedyboy/mywebs/contents/source_gking/_posts/",
+      "tofx": "random.md",
+      "message": "creat new file"
+    },
+    "api_nu": {
+      "gittoken": "geboy",
+      "dowhat": "newfile",
+      "typ": "url",
+      "method": "put",
+      "fromfx": "tempost.md",
+      "baseurl": "https://api.github.com/repos/greeedyboy/mywebs/contents/source_gking/_posts/",
+      "tofx": "random.md",
+      "message": "creat new file"
+    },
+    "api_c": {
+      "gittoken": "geboy",
+      "dowhat": "newcomment",
+      "tpy": "text",
+      "method": "post",
+      "fromfx": "text",
+      "baseurl": "https://api.github.com/repos/greeedyboy/mywebs/issues/",
+      "tofx": "1",
+      "message": "creat new comment"
+    },
+    "api_upf": {
+      "gittoken": "geboy",
+      "dowhat": "updatefile",
+      "typ": "file",
+      "method": "put",
+      "fromfx": "newfile.md",
+      "baseurl": "https://api.github.com/repos/greeedyboy/mywebs/contents/source/_posts/",
+      "tofx": "oldurl.md",
+      "message": "update file from file"
+    },
+    "api_upu": {
+      "gittoken": "geboy",
+      "dowhat": "updatefile",
+      "typ": "url",
+      "method": "put",
+      "fromfx": "newurl.md",
+      "baseurl": "https://api.github.com/repos/greeedyboy/mywebs/contents/source/_posts/",
+      "tofx": "oldurl.md",
+      "message": "update file from url"
+    },
+    "api_upb": {
+      "gittoken": "geboy",
+      "dowhat": "updatefile",
+      "typ": "base64",
+      "method": "put",
+      "fromfx": "base64",
+      "baseurl": "https://api.github.com/repos/greeedyboy/mywebs/contents/source/_posts/",
+      "tofx": "oldurl.md",
+      "message": "update file from base64"
+    }
+  },
+  "posts": {
+    "nankai": [
+      "api_nf"
+    ],
+    "cumt": [
+      "api_nf"
+    ]
+  }
+}
