@@ -15,12 +15,15 @@ class GkingPipeline(object):
         dbname = settings["MONGODB_DBNAME"]
         shart = settings["MONGODB_SHART"]
         shtoken=settings["MONGODB_SHTOKEN"]
+        name=settings['MONGODB_USER']
+        password=settings['MONGODB_PASSWORD']
 
         # 创建MONGODB数据库链接
         #'mongodb://root:123456@localhost:27017/'
-        client = pymongo.MongoClient(host=host)
+        client = pymongo.MongoClient(host=host,port=port)
         # 指定数据库
         mydb = client[dbname]
+        mydb.authenticate(name=name,password=password)
         # 存放数据的数据库表名
         self.postart = mydb[shart]
 

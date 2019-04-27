@@ -74,9 +74,11 @@ Is_dburl=True#是否网络数据库
 
 if Is_dburl:
    # MONGODB 主机名
-   MONGODB_HOST = "mongodb://pond123456:pond123456@ds149056.mlab.com:49056/"
+   MONGODB_HOST = "mongodb://ds149056.mlab.com"
    #mongodb://pond123456:pond123456@ds149056.mlab.com:49056/
    # MONGODB 端口号
+   MONGODB_USER='pond123456'
+   MONGODB_PASSWORD='pond123456'
    MONGODB_PORT = 49056
    # 数据库名称
    MONGODB_DBNAME = "heroku_wbzxx91z"

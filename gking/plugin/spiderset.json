@@ -1,8 +1,5 @@
 {
   "urls": {
-    "http://news.nankai.edu.cn/nkyw/index.shtml": "nankai",
-    "http://news.nankai.edu.cn/qqxy/index.shtml": "nankai",
-    "http://news.nankai.edu.cn/zhxw/index.shtml": "nankai",
     "http://xwzx.cumt.edu.cn/513/list.htm": "cumt"
   },
   "methods": {

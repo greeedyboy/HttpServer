@@ -18,7 +18,7 @@ def git_post():
     shtoken = settings["MONGODB_SHTOKEN"]
 
     # 创建MONGODB数据库链接
-    client = pymongo.MongoClient(host=host, port=port)
+    client = pymongo.MongoClient(host=host,port=port)
     # 指定数据库
     mydb = client[dbname]
     postart = mydb[shart]
