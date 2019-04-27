@@ -1,3 +1,8 @@
 Flask
 gunicorn
 boto
+wheel
+lxml
+Twisted
+pywin32
+scrapy

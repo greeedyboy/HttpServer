@@ -56,13 +56,13 @@ def gitpush(fn,commit='by q',delfn=True):
     os.system('git checkout master')
     print('回到主目录')
     os.system('cd ../')
-<<<<<<< HEAD
+
     print('移动 主目录blog文件到后面')
     os.system('mv '+ fn + ' cfn/'+fn)
-=======
+
     #print('移动 主目录blog文件到后面')
     #os.system('mv ./'+ fn + ' ./cfn/'+fn)
->>>>>>> f1f9289f223221837a97e686c8ff804373463011
+
 
 
     print('git add commit')
