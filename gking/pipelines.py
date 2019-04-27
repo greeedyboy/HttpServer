@@ -17,11 +17,13 @@ class GkingPipeline(object):
         shtoken=settings["MONGODB_SHTOKEN"]
 
         # 创建MONGODB数据库链接
-        client = pymongo.MongoClient(host=host, port=port)
+        #'mongodb://root:123456@localhost:27017/'
+        client = pymongo.MongoClient(host=host)
         # 指定数据库
         mydb = client[dbname]
         # 存放数据的数据库表名
         self.postart = mydb[shart]
+
         self.posttoken = mydb[shtoken]
 
     def process_item(self, item, spider):

@@ -5,6 +5,7 @@
 """
 import pymongo
 from scrapy.conf import settings
+# import scrapy.settings
 from gking.plugin.aqtp2art import dbs_art
 from gking.plugin.gitsender import GhOper
 from gking.plugin.aqgetsets import load_sets
