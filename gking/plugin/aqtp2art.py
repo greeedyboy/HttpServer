@@ -24,7 +24,7 @@ def str_replist(oldlist,newlist,tpfn='posttp.md'):
     return artstr
 
 def dbs_art(dbs:dict,tpfn='posttp.md'):
-    title=dbs['title']
+    title='['+dbs['categories'][0]+']'+dbs['title']+' | '+dbs['categories'][1]
 
     fromlink=dbs['fromlink']
 
