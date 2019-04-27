@@ -1,7 +1,7 @@
-Flask==1.0.2
+Flask
 gunicorn
-boto==2.49.0
-wheel==0.31.1
+boto
+wheel
 lxml==4.3.3
 Twisted==18.7.0
 scrapy==1.5.2
