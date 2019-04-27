@@ -15,7 +15,6 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    runx()
     return render_template("index.html")
 
 @app.route("/blog")
