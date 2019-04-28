@@ -78,7 +78,7 @@ def git_post():
     if num>0:
         # 将dict写入文件，然后提交数据库
         with open(bakjson, 'w', encoding='utf-8') as b_oj:
-            json.dump(dbdic, b_oj, ensure_ascii=False)
+            json.dump(dbdic, b_oj,indent=4, ensure_ascii=False)
 
         # 获得当前时间时间戳
         now = int(time.time())

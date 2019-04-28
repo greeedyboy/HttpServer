@@ -1,6 +1,11 @@
 {
   "urls": {
-    "http://xwzx.cumt.edu.cn/513/list.htm": "cumt"
+    "http://xwzx.cumt.edu.cn/513/list.htm": "cumt",
+    "http://xwzx.cumt.edu.cn/521/list.htm": "cumt",
+    "http://xwzx.cumt.edu.cn/523/list.htm": "cumt",
+    "http://news.nankai.edu.cn/nkyw/index.shtml": "nankai",
+    "http://news.nankai.edu.cn/qqxy/index.shtml": "nankai",
+    "http://news.nankai.edu.cn/zhxw/index.shtml": "nankai"
   },
   "methods": {
     "nankai": {
