@@ -45,7 +45,6 @@ def git_post():
         with open(fn, 'w',encoding='utf-8') as f:
             f.write(strs)
 
-        # settingfile='././spiderset.json'
         sets=load_sets()['posts']
         apis=sets[dbs['method']]
 

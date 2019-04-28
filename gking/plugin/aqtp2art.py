@@ -6,15 +6,17 @@
 from gking.plugin.aqhtml2md import html_md
 import time,os
 
-dir_path = os.path.dirname(os.path.abspath(__file__))+'/'
+# dir_path = os.path.dirname(os.path.abspath(__file__))+'/'
 # print('当前目录绝对路径:', dir_path)
 # settingfile = dir_path + '\spiderset.json'
 
 def str_replist(oldlist,newlist,tpfn='posttp.md'):
 
+    #当前目录绝对路径
+    work_dir = os.path.dirname(os.path.abspath(__file__))
+    os.chdir(work_dir)
 
-
-    with open(dir_path+tpfn,'r',encoding='utf-8') as f_obj:
+    with open(tpfn,'r',encoding='utf-8') as f_obj:
         artstr = f_obj.read()
 
     dic = dict(map(lambda x, y: [x, y], oldlist, newlist))

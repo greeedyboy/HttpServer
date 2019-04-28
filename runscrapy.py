@@ -36,3 +36,9 @@
 #     return state
 #
 # # run_scrapy('gking')
+
+from gking.plugin.aqgetsets import load_sets
+
+s=load_sets()
+
+print(s)
