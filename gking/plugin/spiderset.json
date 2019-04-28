@@ -90,6 +90,16 @@
       "tofx": "random.md",
       "message": "creat new file"
     },
+    "api_bak": {
+      "gittoken": "geboy",
+      "dowhat": "newfile",
+      "typ": "file",
+      "method": "put",
+      "baseurl": "https://api.github.com/repos/greeedyboy/websdb/contents/gking/",
+      "fromfx": "tempost.md",
+      "tofx": "random.md",
+      "message": "creat new file"
+    },
     "api_nb": {
       "gittoken": "geboy",
       "dowhat": "newfile",
