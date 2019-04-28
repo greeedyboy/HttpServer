@@ -57,7 +57,11 @@ class GhOper():
 
         name=gittoken['name']
         email=gittoken['email']
+        #base64 jie
+        # s1 = base64.encodestring('hello world')
+        # s2 = base64.decodestring(s1)
         tokens=gittoken['tokens']
+        tokens = str(base64.b64decode(tokens[2:].encode('utf-8')), 'utf-8')
         method=sets['method']
         typ=sets['typ']
         fromfx=sets['fromfx']
