@@ -50,10 +50,15 @@ class GhOper():
         baseurl=sets['baseurl']
         dowhat=sets['dowhat']
 
+        # 获得当前时间时间戳
+        now = int(time.time())
+        # 转换为其他日期格式,如:"%Y-%m-%d %H:%M:%S"
+        timeStruct = time.localtime(now)
+        dats = time.strftime("%Y-%m-%d %H:%M:%S", timeStruct)
         if self.msg:
-            message = self.msg
+            message = self.msg+' '+dats
         else:
-            message = sets['message']
+            message = sets['message']+' '+dats
 
         name=gittoken['name']
         email=gittoken['email']
