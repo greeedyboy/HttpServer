@@ -72,6 +72,9 @@ def git_post():
             num=num+1
             #成功后存入bakjson
             dbdic[token]=strs
+            
+            with open(bakjson, 'w', encoding='utf-8') as b_oj:
+                json.dump(dbdic, b_oj, indent=4, ensure_ascii=False)
 
             result = postart.delete_many({'token': token})
             pass
