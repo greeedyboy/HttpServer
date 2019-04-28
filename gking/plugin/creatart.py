@@ -61,6 +61,8 @@ def git_post():
             f.write(strs)
 
         #加载设置后进行api更新操作
+        print('trying to post '+token)
+        print('==== ' + dbs['title'])
         apis=sets[dbs['method']]
         ghtest=GhOper(fromfx=fn,tofx=token+'.md',apis=apis)
 
